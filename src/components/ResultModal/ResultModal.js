@@ -1,6 +1,7 @@
 import React from 'react';
+import './ResultModal.css';
 
-export default function ResultModal() {
+const ResultModal = () => {
   return (
     <div className="result-modal">
       <div className="overlay" />
@@ -28,3 +29,5 @@ export default function ResultModal() {
     </div>
   );
 }
+
+export default ResultModal;

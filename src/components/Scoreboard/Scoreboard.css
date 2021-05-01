@@ -1,0 +1,26 @@
+.scoreboard {
+  display: flex;
+  align-items: center;
+  text-align: right;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.scoreboard > div:first-child {
+  margin-right: 25px;
+}
+
+.scoreboard .wrong {
+  color: rgb(211, 79, 79);
+}
+
+.scoreboard .correct {
+  color: rgb(63, 162, 63);
+}
+
+.scoreboard strong {
+  color: #555;
+  font-size: 40px;
+  display: block;
+  margin-bottom: 3px;
+}

@@ -35,123 +35,18 @@ body {
 
 /* header section ---------------------- */
 
-.question-header {
+.question__header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
 }
 
-.category-selector {
-  max-width: 60%;
-}
-
-.category-selector select {
-  font-size: 16px;
-  width: 100%;
-}
-
-.category-selector p {
-  margin: 0;
-  font-size: 16px;
-}
-
-.scoreboard {
-  display: flex;
-  align-items: center;
-  text-align: right;
-  font-size: 16px;
-  line-height: 1;
-}
-
-.scoreboard > div:first-child {
-  margin-right: 25px;
-}
-
-.scoreboard .wrong {
-  color: rgb(211, 79, 79);
-}
-
-.scoreboard .correct {
-  color: rgb(63, 162, 63);
-}
-
-.scoreboard strong {
-  color: #555;
-  font-size: 40px;
-  display: block;
-  margin-bottom: 3px;
-}
-
-.result-modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.result-modal .overlay {
-  position: absolute;
-  background: rgba(0, 0, 0, 0.5);
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.result-modal-content {
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  padding: 30px;
-  width: 400px;
-  margin: 0 auto;
-  max-width: 90%;
-  text-align: center;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.result-modal.is-correct h3 {
-  color: rgb(63, 162, 63);
-}
-
-.result-modal.is-wrong h3 {
-  color: rgb(211, 79, 79);
-}
-
-.result-modal-content h3 {
-  font-size: 30px;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-
-.result-modal-content .correct-answer {
-  margin-bottom: 20px;
-}
-
-.result-modal-content .correct-answer small {
-  color: #777;
-}
-
-.result-modal-content .correct-answer strong {
-  font-size: 40px;
-}
-
 /* main section ---------------------- */
 
-.question-main {
+.question__main {
   background: #fff;
   border-radius: 10px;
   padding: 2.5rem;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   min-width: 500px;
   max-width: 90%;
   min-height: 350px;
@@ -159,54 +54,23 @@ body {
   align-items: center;
 }
 
-.question {
-  width: 100%;
-}
-
-.question h2 {
-  margin-top: 0;
-  font-size: 16px;
-  font-weight: normal;
-  text-align: center;
-}
-
-button {
-  display: block;
-  width: 100%;
-  margin-bottom: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  color: #195e5b;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-  padding: 0.8rem;
-  border-width: 1px;
-  border-radius: 0.25rem;
-  border-color: #38a89d;
-  background-color: #4dc0b5;
-  transition: 0.2s ease all;
-  line-height: 1;
-}
-
-button:hover {
-  background-color: #a0f0ed;
-  box-shadow: 2px 5px 4px 0 rgba(0, 0, 0, 0.1);
-}
-
 /* footer section ---------------------- */
 
-.question-footer {
+.question__footer {
   margin-top: 15px;
   text-align: right;
 }
 
-.question-footer button {
+.footer__button {
   background: #ccc;
-  border-color: #aaa;
+  border: none;
+  border-radius: 4px;
   color: #777;
   width: auto;
   margin-left: auto;
-  font-size: 12px;
+  font-size: 14px;
   padding: 10px 20px;
+  cursor: pointer;
 }
 
 /* putting down here because the svg pattern is so long */

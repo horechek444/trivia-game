@@ -1,6 +1,7 @@
 import React from 'react';
+import './Scoreboard.css';
 
-export default function Scoreboard() {
+const Scoreboard = () => {
   return (
     <div className="scoreboard">
       <div className="wrong">
@@ -14,3 +15,5 @@ export default function Scoreboard() {
     </div>
   );
 }
+
+export default Scoreboard;
