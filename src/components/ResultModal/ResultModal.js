@@ -1,30 +1,34 @@
 import React from 'react';
 import './ResultModal.css';
+import NextQuestionButton from "../NextQuestionButton/NextQuestionButton";
 
-const ResultModal = () => {
+const ResultModal = ({isCorrect, question, getNewQuestion}) => {
   return (
-    <div className="result-modal">
+    <div className={isCorrect ? "result-modal result-modal__is-correct" : "result-modal result-modal__is-wrong"}>
       <div className="overlay" />
-      <div className="result-modal-content">
-        <h3>
-          👊👊👊
-          <br />
-          YOU WON!
-        </h3>
+      <div className="result-modal__content">
+        {isCorrect && (
+          <h3 className="result-modal__title">
+            YOU WON!
+          </h3>
+        )}
 
-        <h3>
-          😟😢😟
-          <br />
-          YOU LOST!
-        </h3>
+        {!isCorrect && (
+          <h3 className="result-modal__title">
+            YOU LOST!
+          </h3>
+        )}
 
+        {!isCorrect && (
         <div className="correct-answer">
           <small>The correct answer was:</small>
           <br />
-          <strong>Answer here</strong>
+          <strong
+            dangerouslySetInnerHTML={{ __html: question.correct_answer }}
+          />
         </div>
-
-        <button>Go to next question 👉</button>
+        )}
+        <NextQuestionButton className={"button"} getNewQuestion={getNewQuestion} />
       </div>
     </div>
   );
