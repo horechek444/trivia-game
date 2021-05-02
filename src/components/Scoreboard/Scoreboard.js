@@ -17,13 +17,13 @@ const Scoreboard = ({isCorrect}) => {
 
   return (
     <div className="scoreboard">
-      <div className="wrong">
-        <strong>{wrong}</strong>
-        <span>wrong</span>
+      <div className="scoreboard__number">
+        <strong className="scoreboard__score">{wrong}</strong>
+        <span className="scoreboard__wrong">wrong</span>
       </div>
-      <div className="correct">
-        <strong>{correct}</strong>
-        <span>correct</span>
+      <div className="scoreboard__number">
+        <strong className="scoreboard__score">{correct}</strong>
+        <span className="scoreboard__correct">correct</span>
       </div>
     </div>
   );

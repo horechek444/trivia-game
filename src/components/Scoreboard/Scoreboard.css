@@ -6,19 +6,19 @@
   line-height: 1;
 }
 
-.scoreboard > div:first-child {
+.scoreboard__number:first-child {
   margin-right: 25px;
 }
 
-.scoreboard .wrong {
+.scoreboard__wrong {
   color: rgb(211, 79, 79);
 }
 
-.scoreboard .correct {
+.scoreboard__correct {
   color: rgb(63, 162, 63);
 }
 
-.scoreboard strong {
+.scoreboard__score {
   color: #555;
   font-size: 40px;
   display: block;
