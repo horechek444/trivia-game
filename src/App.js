@@ -5,33 +5,20 @@ import ResultModal from './components/ResultModal/ResultModal';
 import Scoreboard from './components/Scoreboard/Scoreboard';
 import NextQuestionButton from './components/NextQuestionButton/NextQuestionButton';
 import './App.css';
+import useTrivia from "./hooks/useTrivia";
 
 const App = () => {
-  const [question, setQuestion] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState('any');
+  const {question, category, setCategory, getQuestion} = useTrivia();
   const [isCorrect, setIsCorrect] = useState(null);
-
-  const getNewQuestion = useCallback(() => {
-    setIsCorrect(null);
-    let url = 'https://opentdb.com/api.php?amount=1';
-    if (selectedCategory !== 'any') {
-      url += `&category=${selectedCategory}`;
-    }
-
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        setQuestion(data.results[0]);
-      })
-  }, [selectedCategory])
-
-  useEffect(() => {
-    getNewQuestion();
-  }, [getNewQuestion, selectedCategory])
 
   const handleQuestionAnswered = (answer) => {
     const isAnswerCorrect = answer === question.correct_answer;
     setIsCorrect(isAnswerCorrect);
+  }
+
+  const handleNextQuestion = () => {
+    setIsCorrect(null);
+    getQuestion();
   }
 
   return (
@@ -39,15 +26,17 @@ const App = () => {
       {isCorrect !== null && <ResultModal
         isCorrect={isCorrect}
         question={question}
-        getNewQuestion={getNewQuestion}
+        getNewQuestion={handleNextQuestion}
       />}
 
       <header className="question__header">
         <CategorySelector
-          category={selectedCategory}
-          chooseCategory={setSelectedCategory}
+          category={category}
+          chooseCategory={setCategory}
         />
-        <Scoreboard />
+        <Scoreboard
+          isCorrect={isCorrect}
+        />
       </header>
 
       <main className="question__main">
@@ -58,7 +47,10 @@ const App = () => {
       </main>
 
       <footer className="question__footer footer">
-        <NextQuestionButton className={"footer__button"} getNewQuestion={getNewQuestion} />
+        <NextQuestionButton
+          className={"footer__button"}
+          getNewQuestion={handleNextQuestion}
+        />
       </footer>
     </div>
   );
